@@ -44,7 +44,7 @@ function playAudio() {
       }
     }
 
-    dispatcher = connection.play('./music/' + audio);
+    dispatcher = connection.play(fs.createReadStream('./music/' + audio));
     
     dispatcher.on('start', () => {
       console.log('Now playing ' + audio);
